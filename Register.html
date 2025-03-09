@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration</title>
+    <link rel="stylesheet" type="text/css" href="Register.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Farmer Registration Form</h2><br>
+        <form action="register.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm();">
+            <label>Step 1: Personal Details</label>
+            <label>Full Name:</label>
+            <input type="text" name="full_name" id="full_name" >
+            
+            <label>NIC:</label>
+            <input type="text" name="nic" id="nic" >
+
+            <label>Date of Birth:</label>
+            <input type="date" name="birthdate" id="birthdate">
+
+            <label>Gender:</label>
+            <select name="gender" id="gender">
+                <option value="">--Select--</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+
+            <label>Contact Number:</label>
+            <input type="text" name="mobile" id="contact" >
+            <label>Home Number(Optional):</label>
+            <input type="text" name="home" id="home_contact">
+
+            <label>Address:</label>
+            <textarea name="address" id="address" ></textarea>
+
+            <label>Upload NIC (JPG/PNG):</label>
+            <input type="file" name="id_proof" id="id_proof">
+
+            <label>Username:</label>
+            <input type="text" name="username" id="username">
+
+            <label>Password:</label>
+            <input type="password" name="password" id="password">
+
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" id="confirm_password">
+
+            <br><br><br>
+            <label>Step 2: Land & Farm Details</label>
+
+            <label for="province">Select Province:</label>
+            <select id="province" name="province" onchange="updateDistricts()">
+                <option value="">-- Select Province --</option>
+                <option value="Western">Western</option>
+                <option value="Central">Central</option>
+                <option value="Southern">Southern</option>
+                <option value="Northern">Northern</option>
+                <option value="Eastern">Eastern</option>
+                <option value="NorthWestern">North Western</option>
+                <option value="NorthCentral">North Central</option>
+                <option value="Uva">Uva</option>
+                <option value="Sabaragamuwa">Sabaragamuwa</option>
+            </select>
+          
+            <label for="district">Select District:</label>
+            <select id="district" name="district">
+                <option value="">-- Select District --</option>
+            </select>
+
+            <script>
+                function updateDistricts() {
+                    const province = document.getElementById("province").value;
+                    const districtSelect = document.getElementById("district");
+
+                    districtSelect.innerHTML = '<option value="">-- Select District --</option>';
+
+                    if (province === "Western") {
+                        districtSelect.innerHTML += '<option value="Colombo">Colombo</option>';
+                        districtSelect.innerHTML += '<option value="Gampaha">Gampaha</option>';
+                        districtSelect.innerHTML += '<option value="Kalutara">Kalutara</option>';
+                    } else if (province === "Central") {
+                        districtSelect.innerHTML += '<option value="Kandy">Kandy</option>';
+                        districtSelect.innerHTML += '<option value="Matale">Matale</option>';
+                        districtSelect.innerHTML += '<option value="Nuwara Eliya">Nuwara Eliya</option>';
+                    } else if (province === "Southern") {
+                        districtSelect.innerHTML += '<option value="Galle">Galle</option>';
+                        districtSelect.innerHTML += '<option value="Matara">Matara</option>';
+                        districtSelect.innerHTML += '<option value="Hambantota">Hambantota</option>';
+                    } else if (province === "Northern") {
+                        districtSelect.innerHTML += '<option value="Jaffna">Jaffna</option>';
+                        districtSelect.innerHTML += '<option value="Kilinochchi">Kilinochchi</option>';
+                        districtSelect.innerHTML += '<option value="Mannar">Mannar</option>';
+                        districtSelect.innerHTML += '<option value="Mullaitivu">Mullaitivu</option>';
+                        districtSelect.innerHTML += '<option value="Vavuniya">Vavuniya</option>';
+                    } else if (province === "Eastern") {
+                        districtSelect.innerHTML += '<option value="Trincomalee">Trincomalee</option>';
+                        districtSelect.innerHTML += '<option value="Batticaloa">Batticaloa</option>';
+                        districtSelect.innerHTML += '<option value="Ampara">Ampara</option>';
+                    } else if (province === "NorthWestern") {
+                        districtSelect.innerHTML += '<option value="Kurunegala">Kurunegala</option>';
+                        districtSelect.innerHTML += '<option value="Puttalam">Puttalam</option>';
+                    } else if (province === "NorthCentral") {
+                        districtSelect.innerHTML += '<option value="Anuradhapura">Anuradhapura</option>';
+                        districtSelect.innerHTML += '<option value="Polonnaruwa">Polonnaruwa</option>';
+                    } else if (province === "Uva") {
+                        districtSelect.innerHTML += '<option value="Badulla">Badulla</option>';
+                        districtSelect.innerHTML += '<option value="Monaragala">Monaragala</option>';
+                    } else if (province === "Sabaragamuwa") {
+                        districtSelect.innerHTML += '<option value="Ratnapura">Ratnapura</option>';
+                        districtSelect.innerHTML += '<option value="Kegalle">Kegalle</option>';
+                    }
+                }
+            </script>
+
+            <label>Land Ownership:</label>
+            <select name="land_ownership" id="land_ownership">
+                <option value="Owned">Owned</option>
+                <option value="Rented">Rented</option>
+                <option value="Government Lease">Government Lease</option>
+            </select>
+
+            <label>Land Area (Acres):</label>
+            <input type="number" step="0.1" name="land_area" id="land_area">
+
+            <label>Irrigation Type:</label>
+            <select name="irrigation" id="irrigation">
+                <option value="">--Select--</option>
+                <option value="Rain-fed">Rain-fed</option>
+                <option value="Canal">Canal</option>
+                <option value="Well">Well</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>
+                I agree that the information provided above is completely correct and I will honestly provide all information required in future.
+                <input type="checkbox" name="agreed" id="agreed">
+            </label>
+
+            <button type="submit" name="btnSubmit">Register Farmer</button>
+        </form>
+
+        <script>
+            function validateForm() {
+                let fullName = document.getElementById("full_name").value.trim();
+                let nic = document.getElementById("nic").value.trim();
+                let contact = document.getElementById("contact").value.trim();
+                let address = document.getElementById("address").value.trim();
+                let homeContact = document.getElementById("home_contact").value.trim();
+                let username = document.getElementById("username").value.trim();
+                let password = document.getElementById("password").value;
+                let confirmPassword = document.getElementById("confirm_password").value;
+                let birthdate = document.getElementById("birthdate").value;
+                let gender = document.getElementById("gender").value;
+                let idProof = document.getElementById("id_proof").value;
+                let province = document.getElementById("province").value;
+                let district = document.getElementById("district").value;
+                let irrigation_type = document.getElementById("irrigation").value;
+                let land_area = document.getElementById("land_area").value;
+                let agreed = document.getElementById("agreed").checked;
+
+                if (fullName === "") {
+                    alert("Full Name is required.");
+                    return false;
+                }
+
+                let nicPattern = /^[0-9]{9}[vVxX]$|^[0-9]{12}$/;
+                if (!nicPattern.test(nic)) {
+                    alert("Enter a valid NIC.");
+                    return false;
+                }
+
+                if(!birthdate){
+                    alert("Please select date of birth.");
+                    return false;
+                }
+
+                if(!gender){
+                    alert("Please select gender");
+                    return false;
+                }
+
+                let phonePattern = /^\+94[0-9]{9}$/;
+
+                if (!phonePattern.test(contact)) {
+                    alert("Enter a valid contact number starting with (+94).");
+                    return false;
+                }
+
+                if (homeContact !== "" && !phonePattern.test(homeContact)) {
+                    alert("Enter a valid phone number starting with (+94).");
+                    return false;
+                }
+
+                if(address == ""){
+                    alert("Please enter address.");
+                    return false;
+                }
+
+                if(username == ""){
+                    alert("Username is required");
+                    return false;
+                }
+
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters.");
+                    return false;
+                }
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+
+                if (province === "") {
+                    alert("Please select a Province.");
+                    return false;
+                }
+
+                if (district === "") {
+                    alert("Please select a District.");
+                    return false;
+                }
+
+                if(land_area <= 0){
+                    alert("Please enter valid number for land area in acres.");
+                    return false;
+                }
+
+                if(irrigation_type == "--Select--"){
+                    alert("Please select irrigation type of your paddy.");
+                    return false;
+                }
+
+                if (!agreed) {
+                    alert("You must agree to the terms and conditions.");
+                    return false;
+                }
+
+                return true; 
+            }
+        </script>
+    </div>
+</body>
+</html>
