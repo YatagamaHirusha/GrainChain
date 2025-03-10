@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2d572c;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.sidebar {
+    background-color: #d4edda;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #2d572c;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #f4c542;
+}
+
+.main-content {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #2d572c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1e3e1e;
+}
+
+.supply-info, .harvest-history, .rice-requests, .notifications {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2d572c;
+    color: white;
+    margin-top: 20px;
+}
+
+.fertilizer-subsidy-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.fertilizer-subsidy-container h2 {
+    color: #2d572c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subsidy-status {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.subsidy-status h3 {
+    color: #2d572c;
+    margin-bottom: 10px;
+}
+
+.subsidy-status p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+#eligibility-status {
+    font-weight: bold;
+    color: green;
+}
+
+#amount {
+    font-weight: bold;
+    color: #f4c542;
+}
+
+.request-subsidy {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#apply-btn {
+    background-color: #2d572c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#apply-btn:hover {
+    background-color: #1e3e1e;
+}
+
+.subsidy-history {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.subsidy-history h3 {
+    color: #2d572c;
+    margin-bottom: 10px;
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#history-table th, #history-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#history-table th {
+    background-color: #2d572c;
+    color: white;
+}
+
+#history-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+#history-table tr:hover {
+    background-color: #f4c542;
+}
+
