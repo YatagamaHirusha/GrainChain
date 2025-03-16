@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard</title>
+    <style type="text/css">
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        aside {
+            width: 250px;
+            background: #34495e;
+            color: white;
+            padding: 20px;
+        }
+
+        aside h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        aside ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Main Content */
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            background: #ecf0f1;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        section {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Order History Cards */
+        .order-history-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .order-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .order-card p {
+            margin: 5px 0;
+        }
+
+        /* Track Orders Section */
+        .tracking-status {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside>
+            <h2>Business Dashboard</h2>
+            <ul>
+                <li><a href="#order-history">Order History</a></li>
+                <li><a href="#track-orders">Track Orders</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main>
+            <h2>Welcome, Business Owner!</h2>
+            
+            <!-- Banner Image -->
+            <img src="https://us.lakpura.com/cdn/shop/articles/paddy.jpg?v=1722222713" alt="Paddy Field" style="width:100%; border-radius: 10px;">
+            
+            <!-- Order History Section -->
+            <section id="order-history">
+                <h3>Order History</h3>
+                <div class="order-history-container">
+                    <!-- Orders will be displayed here using cards -->
+                    <p>No previous orders found.</p>
+                </div>
+            </section>
+            
+            <!-- Track Orders Section -->
+            <section id="track-orders">
+                <h3>Track Your Orders</h3>
+                <div class="tracking-status">
+                    <p><strong>Pending/Approved</strong> (2 days) → <strong>In Warehouse</strong> (3 days) → <strong>On The Way</strong> (2 days) → <strong>Delivered</strong></p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Registration</title>
+    <style type="text/css">
+        .form-section {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #219150;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="form-section">
+        <h2>Business Registration</h2>
+        <form method="post" action="register_business.php">
+            <input type="text" name="business_name" placeholder="Business Name" required>
+            <input type="text" name="contact_person" placeholder="Contact Person" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="location" placeholder="Business Location" required>
+            <input type="text" name="registration_number" placeholder="Registration Number" required>
+            <select name="business_type" required>
+                <option value="Retailer">Retailer</option>
+                <option value="Wholesaler">Wholesaler</option>
+                <option value="Exporter">Exporter</option>
+            </select>
+            <input type="number" name="purchase_capacity" placeholder="Purchase Capacity (KG)" required>
+            <button type="submit" name="btnSubmit">Register</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Paddy Marketing Board</p>
+    </footer>
+</body>
+</html>
