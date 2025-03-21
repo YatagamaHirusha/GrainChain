@@ -55,7 +55,6 @@ public class LoginPage {
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(true);
 		frame.setTitle("GrainChain Login Portal");
-		frame.setIconImage(new ImageIcon("C:\\Users\\HIRUSHA\\Desktop\\Grainchain\\GrainChain\\src\\GUI\\icon.png").getImage());
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(51, 102, 102));
